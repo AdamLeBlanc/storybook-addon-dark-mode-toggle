@@ -91,7 +91,16 @@
   "storybook": {
     "displayName": "dark-mode-toggle",
     "supportedFrameworks": [
-      "react"
+      "react",
+      "vue",
+      "angular",
+      "web-components",
+      "ember",
+      "html",
+      "svelte",
+      "preact",
+      "aurelia",
+      "marionette"
     ],
     "icon": "https://raw.githubusercontent.com/AdamLeBlanc/storybook-addon-dark-mode-toggle/main/light_mode_FILL0_wght400_GRAD0_opsz48.png"
   },
