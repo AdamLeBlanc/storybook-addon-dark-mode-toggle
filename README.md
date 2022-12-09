@@ -12,6 +12,41 @@ html[data-theme="dark"] {
 
 Than this is the plugin for you.
 
+## Setup
+
+1. `yarn add -D storybook-addon-dark-mode-toggle` or `npm install --save-dev storybook-addon-dark-mode-toggle`
+2. `.storybook/main.js` -> `addons: [..others, 'storybook-addon-dark-mode-toggle'],
+3. OPTIONAL: Add params to `preview.js` under the key `data-theme-toggle`
+4. import whatever `.[s]css` files control your theme into `.storybook/preview.js`, such as `import '../styles/theme/theme.scss';` (see motivation for what this file may look like.)
+5. Click the added icon to toggle theme
+
+## Configuration
+
+Optional, but if you choose to add a configuration, you can't skip any of the fields.
+
+You can configure the addon by adding the following to `.storybook/preview.js` (default values shown):
+
+```javascript
+export const parameters = {
+  querySelector: "html",
+  "data-target": "theme",
+  default: "light",
+  values: {
+    dark: "dark",
+    light: "light",
+  },
+  lightFill: "#a05b00",
+  darkFill: "#0926b5",
+};
+```
+
+- `querySelector`: value that will be passed into `document.querySelector('selector')` call to get the dom element you data attribute will be applied to.
+- `data-target`: the name of the data attribute that will be set. The above default would give you `data-theme='light'`
+- `default`: either `dark` or `light`, will set the initial data attribute value based on `values`
+- `values`: the values that the data attribute will be set to for dark/light themes
+- `lightFill`: The fill color for the addons toolbar icon in light mode
+- `darkFill`: The fill color for the addons toolbar icon in dark mode
+
 ## Motivation For Making this Addon
 
 I do my themes by setting default theme variables in a `:root {...}` selector and then controlling the theme by overwriting those variables in other selectors. All of my projects have a `theme.scss` file like this ->
@@ -48,41 +83,6 @@ I also allow the user to toggle between light and dark themes via a `data-theme`
 I was unable to find a suitable addon that would allow me to quickly toggle the theme my components are rendered with in storybook. There were a few addons that were on the right track, notably [storybook-theme-toggle](https://github.com/antonis-zisis/storybook-theme-toggle) by [Antonis Zisis](https://github.com/antonis-zisis). However, they lacked support for configuration and couldn't be dropped into my project without changing my source code.
 
 Therefore I set out to create a simple toggle plugin that can do the same thing as `storybook-theme-toggle` but with optional configuration.
-
-## Setup
-
-1. `yarn add -D storybook-addon-dark-mode-toggle` or `npm install --save-dev storybook-addon-dark-mode-toggle`
-2. `.storybook/main.js` -> `addons: [..others, 'storybook-addon-dark-mode-toggle'],
-3. OPTIONAL: Add params to `preview.js` under the key `data-theme-toggle`
-4. import whatever `.[s]css` files control your theme into `.storybook/preview.js`, such as `import '../styles/theme/theme.scss';` (see motivation for what this file may look like.)
-5. Click the added icon to toggle theme
-
-## Configuration
-
-Optional, but if you choose to add a configuration, you can't skip any of the fields.
-
-You can configure the addon by adding the following to `.storybook/preview.js` (default values shown):
-
-```javascript
-export const parameters = {
-  querySelector: "html",
-  "data-target": "theme",
-  default: "light",
-  values: {
-    dark: "dark",
-    light: "light",
-  },
-  lightFill: "#a05b00",
-  darkFill: "#0926b5",
-};
-```
-
-- `querySelector`: value that will be passed into `document.querySelector('selector')` call to get the dom element you data attribute will be applied to.
-- `data-target`: the name of the data attribute that will be set. The above default would give you `data-theme='light'`
-- `default`: either `dark` or `light`, will set the initial data attribute value based on `values`
-- `values`: the values that the data attribute will be set to for dark/light themes
-- `lightFill`: The fill color for the addons toolbar icon in light mode
-- `darkFill`: The fill color for the addons toolbar icon in dark mode
 
 ### Addon Development docs
 
