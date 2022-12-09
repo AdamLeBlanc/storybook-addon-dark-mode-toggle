@@ -93,7 +93,7 @@
     "supportedFrameworks": [
       "react"
     ],
-    "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+    "icon": "https://raw.githubusercontent.com/AdamLeBlanc/storybook-addon-dark-mode-toggle/main/light_mode_FILL0_wght400_GRAD0_opsz48.png"
   },
   "dependencies": {}
 }
