@@ -15,7 +15,7 @@ Than this is the plugin for you.
 ## Setup
 
 1. `yarn add -D storybook-addon-dark-mode-toggle` or `npm install --save-dev storybook-addon-dark-mode-toggle`
-2. `.storybook/main.js` -> `addons: [..others, 'storybook-addon-dark-mode-toggle'],
+2. `.storybook/main.js` -> `addons: [..others, 'storybook-addon-dark-mode-toggle']`,
 3. OPTIONAL: Add params to `preview.js` under the key `data-theme-toggle`
 4. import whatever `.[s]css` files control your theme into `.storybook/preview.js`, such as `import '../styles/theme/theme.scss';` (see motivation for what this file may look like.)
 5. Click the added icon to toggle theme
