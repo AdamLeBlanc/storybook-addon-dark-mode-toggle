@@ -1,3 +1,15 @@
+# v0.0.5 (Fri Dec 09 2022)
+
+#### ⚠️ Pushed to `main`
+
+- bug: use global state to maintain state between page changes (leblanca37@gmail.com)
+
+#### Authors: 1
+
+- Adam LeBlanc (leblanca37@gmail.com)
+
+---
+
 # v0.0.4 (Fri Dec 09 2022)
 
 
