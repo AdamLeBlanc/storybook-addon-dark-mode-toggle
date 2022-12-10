@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useParameter } from "@storybook/api";
+import { useGlobals, useParameter } from "@storybook/api";
 import { IconButton } from "@storybook/components";
 import { PARAM_KEY, TOOL_ID } from "./constants";
 
@@ -21,14 +21,20 @@ export const Tool = () => {
     defaultConfiguration
   );
 
-  const [isDark, setIsDark] = useState(
-    userConfiguration.default === userConfiguration.values.dark
-  );
+  const [{ dmt_isDark }, updateGlobals] = useGlobals();
 
-  const toggleTheme = useCallback(() => setIsDark((isDark) => !isDark), []);
+  const toggleTheme = useCallback(() => {
+    updateGlobals({
+      dmt_isDark: !dmt_isDark,
+    });
+  }, [dmt_isDark]);
 
   useEffect(() => {
-    setIsDark(userConfiguration.default === userConfiguration.values.dark);
+    if (typeof dmt_isDark === "undefined") {
+      updateGlobals({
+        dmt_isDark: userConfiguration.default === userConfiguration.values.dark,
+      });
+    }
   }, [userConfiguration]);
 
   useEffect(() => {
@@ -45,22 +51,24 @@ export const Tool = () => {
     if (element) {
       element.setAttribute(
         `data-${userConfiguration["data-target"]}`,
-        isDark ? userConfiguration.values.dark : userConfiguration.values.light
+        dmt_isDark
+          ? userConfiguration.values.dark
+          : userConfiguration.values.light
       );
     } else {
       const error = `Unable to find element with query selector ${userConfiguration.querySelector}`;
       throw new Error(error);
     }
-  }, [isDark]);
+  }, [dmt_isDark]);
 
   return (
     <IconButton
       key={TOOL_ID}
-      active={isDark}
+      active={dmt_isDark}
       title="Enable my addon"
       onClick={toggleTheme}
     >
-      {isDark ? (
+      {dmt_isDark ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           enableBackground="new 0 0 24 24"
