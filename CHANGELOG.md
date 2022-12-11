@@ -1,3 +1,15 @@
+# v0.0.6 (Sat Dec 10 2022)
+
+#### ⚠️ Pushed to `main`
+
+- chore: updated meta data so storybook.org will pick the package up. ([@AdamLeBlanc](https://github.com/AdamLeBlanc))
+
+#### Authors: 1
+
+- Adam LeBlanc ([@AdamLeBlanc](https://github.com/AdamLeBlanc))
+
+---
+
 # v0.0.5 (Fri Dec 09 2022)
 
 #### ⚠️ Pushed to `main`
