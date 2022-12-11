@@ -3,10 +3,18 @@
   "version": "0.0.5",
   "description": "Allows you to toggle a data attributes on any dom element to switch between light and dark mode.",
   "keywords": [
+    "storybook-addons",
     "react",
+    "angular",
+    "vue",
+    "web",
+    "media query",
+    "style",
+    "css",
+    "scss",
+    "ember",
     "theme",
-    "dark mode",
-    "storybook-addons"
+    "dark mode"
   ],
   "repository": {
     "type": "git",
@@ -89,7 +97,10 @@
     "access": "public"
   },
   "storybook": {
-    "displayName": "dark-mode-toggle",
+    "displayName": "Toggle Dark Mode (using data attributes)",
+    "unsupportedFrameworks": [
+      "react-native"
+    ],
     "supportedFrameworks": [
       "react",
       "vue",
