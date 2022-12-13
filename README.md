@@ -40,7 +40,7 @@ export const parameters = {
 };
 ```
 
-- `querySelector`: value that will be passed into `document.querySelector('selector')` call to get the dom element you data attribute will be applied to.
+- `querySelector`: value that will be passed into a `document.querySelector('selector')` call to get the dom element your data attribute will be applied to.
 - `data-target`: the name of the data attribute that will be set. The above default would give you `data-theme='light'`
 - `default`: either `dark` or `light`, will set the initial data attribute value based on `values`
 - `values`: the values that the data attribute will be set to for dark/light themes
@@ -76,7 +76,7 @@ html[data-theme="dark"] {
 }
 ```
 
-Where tokens represents the global variables and color pallet that is then assigned to theme specific variable mixins in `theme-light.scss` and `theme-dark.scss` (similar to how tokens work in material 3). I then default to the light theme but respect the users preference for a dark theme with `@media (prefers-color-scheme: dark)`.
+Where `tokens.scss` has the "global" custom css properties (variables) that are referenced in my theme files, `theme-light.scss` and `theme-dark.scss` (similar to how tokens work in material 3). I then default to the light theme but respect the users preference for a dark theme with `@media (prefers-color-scheme: dark)`.
 
 I also allow the user to toggle between light and dark themes via a `data-theme` selector on the `html` tag.
 
