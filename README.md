@@ -28,15 +28,17 @@ You can configure the addon by adding the following to `.storybook/preview.js` (
 
 ```javascript
 export const parameters = {
-  querySelector: "html",
-  "data-target": "theme",
-  default: "light",
-  values: {
-    dark: "dark",
-    light: "light",
-  },
-  lightFill: "#a05b00",
-  darkFill: "#0926b5",
+    'data-theme-toggle': {
+    querySelector: "html",
+    "data-target": "theme",
+    default: "light",
+    values: {
+      dark: "dark",
+      light: "light",
+    },
+    lightFill: "#a05b00",
+    darkFill: "#0926b5",
+  }  
 };
 ```
 
