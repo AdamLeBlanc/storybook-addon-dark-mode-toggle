@@ -82,7 +82,7 @@
     "@storybook/components": "^6.5.14",
     "@storybook/core-events": "^6.5.14",
     "@storybook/theming": "^6.5.14",
-    "react": "^16.8.0 || ^17.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "peerDependenciesMeta": {
